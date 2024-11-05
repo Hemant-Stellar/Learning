@@ -240,9 +240,10 @@ for entity in doc.ents:
 """### ***LSTM***"""
 
 import numpy as np
+import tensorflow
 from tensorflow.keras.datasets import imdb  # IMDB dataset for binary sentiment analysis
 from tensorflow.keras.models import Sequential  # Sequential model for building neural networks layer by layer
-from tensorflow.keras.layers import Embedding, LSTM, Dense  # Layers for embedding, LSTM, and dense output
+from tensorflow.keras.layers import Embedding, LSTM, Dense   # Layers for embedding, LSTM, and dense output
 from tensorflow.keras.preprocessing.sequence import pad_sequences  # Function to pad sequences to a uniform length
 
 # Load the IMDB dataset

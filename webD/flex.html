@@ -1,0 +1,49 @@
+<!-- 1) Descendant Selector (Empty Space) (parent child)
+2) Child Selector ( >) (parent > child)
+3) Adjacent Sibling Selector (+) (parent + child)
+4) General Sibling Selector (~) (parent ~ child) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width: 500px;
+        height: 500px;
+        background-color: aqua;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .item{
+        border: 2px solid black;
+    }
+    .container > div{
+        border: 2px solid red;
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+        margin: 5px;
+
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+    </div>
+    <div>Hello</div>
+    <h1>Text</h1>
+    <!-- <div class="container"></div> -->
+    <div>LPUUUU</div>
+</body>
+</html>

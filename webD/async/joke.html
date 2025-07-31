@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <button onclick="fun()">Get Joke</button>
+        <h1 id="setup"></h1>
+        <h2 id="punchline"></h2>
+
+    </body>
+    <script>
+function fun(){        
+    var data = fetch('https://official-joke-api.appspot.com/random_joke')  
+    data.then((result)=>{
+        return result.json();
+    }).then((response)=>{
+        console.log(response);
+        document.getElementById('setup').innerHTML = response.setup;
+        document.getElementById('punchline').innerHTML = response.punc+hline;
+    })
+}
+    </script>
+</html>

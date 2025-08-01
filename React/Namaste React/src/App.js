@@ -3,22 +3,7 @@ import ReactDOM from "react-dom/client";
 import Header from './components/Header';
 import Body from './components/Body';
 
-/**
- * Header
- * - Logo
- *  - NavItems
- * Body
- *  - Search
- *  - card container
- *  - RestaurantContainer
- *      - RestaurantCard
- *      - Img
- *      - Name of Res, Star Rating, cuisines, delivery time.
- * Footer
- * - Copyright
- *  - Links
- *  - Contact
- */
+
 
 const AppLayout = () =>{
     return (

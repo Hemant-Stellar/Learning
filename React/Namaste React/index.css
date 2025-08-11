@@ -1,64 +1,167 @@
-.header{
-    display:flex;
-    justify-content: space-between;
-    border:1px solid black
+/* -------- Header -------- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.logo{
-    width:100px;
+/* -------- Logo -------- */
+.logo {
+  width: 100px;
+  transition: transform 0.3s ease;
 }
-.nav-items{
-    padding: 0px 20px;
-}
-.nav-items > ul{
-    font-size:24px;
-    display : flex;
-    list-style: none;
-}
-.nav-items > ul > li{
-    padding : 10px;
-    margin : 10px;
+.logo:hover {
+  transform: scale(1.05);
 }
 
-.res-card{
-    margin:5px;
-    padding : 5px;
-    width:250px;
-    background-color: #D3D3D3;
-    
-}
-.res-card:hover{
-    border: 1px solid black;
-    cursor:  pointer ;
+/* -------- Nav -------- */
+.nav-items {
+  padding: 0 20px;
 }
 
-.res-container{
-    display: flex;
-    flex-wrap:wrap;
-    justify-content: center;
-    align-items: center;
-    
+.nav-items > ul {
+  font-size: 18px;
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-items > ul > li {
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.nav-items > ul > li:hover {
+  background: rgba(30, 64, 175, 0.1);
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+/* -------- Login Button -------- */
+.login {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+}
+
+.login:hover {
+  background: linear-gradient(135deg, #2563eb, #60a5fa);
+  transform: scale(1.05);
+}
+
+.login:active {
+  background: #1e3a8a;
+  transform: scale(0.98);
+}
+
+/* -------- Search + Filter -------- */
+.search {
+  padding: 10px 16px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  margin: 20px auto;
+  display: flex;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.filter-btn {
+  margin: 10px;
+  padding: 10px 16px;
+  background-color: #f3f4f6;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: #e5e7eb;
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+/* -------- Restaurant Cards -------- */
+.res-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.res-card {
+  width: 250px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.res-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
 
 .res-logo {
-    width:100%;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
 }
-.search{
-    padding : 10px;
+
+.res-card > div {
+  padding: 12px;
 }
-.filter-btn{
-margin:10px;
-cursor: pointer;
+
+/* -------- Shimmer Loading -------- */
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
 }
 
 .shimmer-cards {
-    margin:20px;
-    width:200px;
-    height:400px;
-    background-color: #f0f0f0;
+  width: 250px;
+  height: 350px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e2e2e2 50%, #f0f0f0 75%);
+  background-size: 400% 100%;
+  animation: shimmer 1.2s infinite linear;
+  border-radius: 12px;
 }
 
-.shimmer-container {
-    display: flex;
-    flex-wrap: wrap;
+@keyframes shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
 }

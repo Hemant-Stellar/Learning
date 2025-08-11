@@ -1,4 +1,5 @@
 
+const FAST_API = "https://www.youtube.com/watch?v=0sOvCWFmrtA";
 
 const LOGO_URL = "https://img.freepik.com/premium-vector/fast-food-delivery-vector-logo_1012247-128.jpg?w=2000";
 

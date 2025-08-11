@@ -9,6 +9,10 @@ const Body = () =>{
     // console.log(arr);
     const [listOfRes,setListOfRes] = arr;
 
+    const[searchText,setSearchText] = useState("");
+
+    const [filteredList,setFilteredList] = useState([]);
+
     useEffect(()=>{
         fetchData();
     },[]);
@@ -22,6 +26,7 @@ const Body = () =>{
         const json = await data.json();
         // setListOfRes(json); // now the ui will be updated and the page is already loaded till now.
         setListOfRes(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
     }
 
@@ -33,17 +38,42 @@ const Body = () =>{
     return (
          <div className="body">
             <div className = "filter">
+                
+                <div className="search">
+                    <input type="text" className="search-box" value={searchText} 
+                    onChange={(e)=>{
+                        setSearchText( e.target.value);
+                    }}></input>
+
+                    <button onClick={()=>{
+
+                        const filteredRes =  listOfRes.filter(
+                        (res)=> res.info.name.toLowerCase().includes(searchText.toLowerCase())
+                       );
+                       setFilteredList(filteredRes);
+                    }}>Search</button>
+
+                    <button onClick={()=>{
+
+                        const filteredRes =  listOfRes.filter(
+                        (res)=> res.info.name.toLowerCase().includes("")
+                       );
+                       setFilteredList(filteredRes);
+                    }}>Clear </button>
+
+                </div>
+
                 <button className="filter-btn" onClick={()=>{
-                    const filteredList = listOfRes.filter(
+
+                        const topRatedRes = listOfRes.filter(
                         (res) => res.info.avgRating > 4.5
                     )
-                    setListOfRes(filteredList);
+                    setFilteredList(topRatedRes);
                 }}>Top Rated Restaurant</button>
             </div>
-            <div className="search">Search</div>
                 <div className="res-container">
                     {
-                        listOfRes.map((res)=>(
+                        filteredList.map((res)=>(
                             <RestaurantCard key = {res.info.id} resData = {res.info}/>
                         ))}
                 </div>

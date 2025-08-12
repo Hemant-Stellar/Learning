@@ -1,8 +1,9 @@
 import RestaurantCard from "./RestaurantCard";
 //import resList from "../utils/mockData"; //no need of this because api call will do it.
 import {useState, useEffect } from "react";
-import Shimmer from "./Shimmer";
+import Shimmer from "./Shimmer"; 
 import {SWIGGY_URL} from "./../utils/constant";
+import { Link } from "react-router";
 
 const Body = () =>{
     const arr = useState([]);
@@ -24,6 +25,7 @@ const Body = () =>{
         )
 
         const json = await data.json();
+        console.log(json);
         // setListOfRes(json); // now the ui will be updated and the page is already loaded till now.
         setListOfRes(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setFilteredList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
@@ -74,7 +76,7 @@ const Body = () =>{
                 <div className="res-container">
                     {
                         filteredList.map((res)=>(
-                            <RestaurantCard key = {res.info.id} resData = {res.info}/>
+                            <Link to={"/restaurants/"+res?.info?.id } key = {res?.info?.id} className="link"><RestaurantCard resData = {res?.info}/></Link>
                         ))}
                 </div>
             

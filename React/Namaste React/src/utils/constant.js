@@ -7,4 +7,6 @@ const IMG_ID = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_a
 
 const SWIGGY_URL = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=31.62030&lng=74.87650&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
 
-export {SWIGGY_URL,LOGO_URL,IMG_ID};
+const MENU_URL = 'https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=31.33000&lng=75.58440&restaurantId=';
+
+export {MENU_URL,SWIGGY_URL,LOGO_URL,IMG_ID};

@@ -4,4 +4,4 @@
 
 ## Multi Linear Regression
 
-- 
+- [Multi Linear Regression Notebook](https://colab.research.google.com/drive/1S09K7YEcIMU9NdHfFcHpZEP1fPRw-mJx?usp=sharing)

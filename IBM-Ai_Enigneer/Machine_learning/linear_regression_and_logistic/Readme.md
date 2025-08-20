@@ -8,7 +8,6 @@
 
 - [Multi Linear Regression Notebook](https://colab.research.google.com/drive/1S09K7YEcIMU9NdHfFcHpZEP1fPRw-mJx?usp=sharing)
 
-
 ### Logistic Regression Implementation Notebook
 
 - [Logistic Regression Notebook](https://colab.research.google.com/drive/1cleHBxd0eUgYwDZC9YxocNw7IAwX2Owf?usp=sharing)

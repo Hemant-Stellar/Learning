@@ -6,9 +6,11 @@ const Header = ()=>{
     
     return(
         <div className = "header">
-            <div className = "logo-contvainer">
-                <img className="logo" src = {LOGO_URL}/>
-            </div>
+           <Link to ="/" className="link">
+                <div className = "logo-contvainer">
+                    <img className="logo" src = {LOGO_URL}/>
+                </div>
+            </Link>
         <div className="nav-items">
             <ul>
                 <li>

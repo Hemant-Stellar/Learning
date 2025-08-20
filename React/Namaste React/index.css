@@ -170,3 +170,8 @@
   0% { background-position: 100% 0; }
   100% { background-position: -100% 0; }
 }
+
+.user-card{
+  padding : 10px;
+  border: 1px solid black;
+}
